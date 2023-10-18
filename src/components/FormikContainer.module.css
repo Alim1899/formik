@@ -1,14 +1,43 @@
-.submit{
-    background-color: burlywood;
-    width: 190px;
-    height: 40px;
-    margin:200px;
-    color: black;
-    font-weight: 900;
-    border: none;
-    border-radius: 50px;
+.form {
+  border: 1px solid brown;
+width: 100%;
+height: 100%;
 }
-button:hover{
-cursor: pointer;
-opacity: 0.7;
+.header{
+  text-align: center;
+}
+.fields {
+  border: 1px solid brown;
+height: 500px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30% 30% 10%;
+}
+.field {
+  border: 1px solid brown;
+
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+}
+
+
+/* BUTTON */
+
+.submit {
+  background-color: burlywood;
+  width: 190px;
+  height: 40px;
+  color: black;
+  font-weight: 900;
+  border: none;
+  border-radius: 50px;
+}
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }

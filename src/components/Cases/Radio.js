@@ -5,26 +5,29 @@ import TextError from "../TextError";
 const Radio = (props) => {
   const { label, name, options, ...rest } = props;
   return (
-    <div className={classes.formControl}>
+    <div className={classes.formControl && classes.radio}>
       <label htmlFor={name}>{label}</label>
-      <Field id={name} name={name} {...rest}>
-        {({ field }) => {
-          return options.map((option) => {
-            return (
-              <Fragment key={option.key}>
-                <input
-                  type="radio"
-                  {...field}
-                  id={option.value}
-                  value={option.value}
-                  checked={field.value === option.value}
-                />
-                <label htmlFor={option.value}>{option.key}</label>
-              </Fragment>
-            );
-          });
-        }}
-      </Field>
+      <div className={classes.optGroup}>
+        <Field id={name} name={name} {...rest}>
+          {({ field }) => {
+            return options.map((option) => {
+              return (
+                <Fragment key={option.key}>
+                  <input
+                    type="radio"
+                    {...field}
+                    id={option.value}
+                    value={option.value}
+                    checked={field.value === option.value}
+                  />
+                  <option>{option.key}</option>
+                </Fragment>
+              );
+            });
+          }}
+        </Field>
+      </div>
+
       <ErrorMessage name={name} component={TextError} />
     </div>
   );
